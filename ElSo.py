@@ -32,11 +32,21 @@ else:
 #játék újrajátszható
 akare=True
 while akare:
-    tipp=int(input("Tippelj egy egész számot: "))
+    tipp=input("Tippelj egy egész számot: ").strip()
+    if (tipp.isdecimal()):
+        tipp=int(tipp)
+    else:
+        print("Egész számmal játssz")
+        continue
 
     while tipp!=kitalalando_szam:
         print("Nem talált!")
-        tipp=int(input("Tippelj újat: "))
+        tipp=input("Tippelj egy egész számot: ").strip()
+        if (tipp.isdecimal()):
+            tipp=int(tipp)
+        else:
+            print("Egész számmal játssz")
+            continue
     
     print("Eltaláltad!")
 
