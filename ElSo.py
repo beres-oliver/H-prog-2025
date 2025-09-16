@@ -33,16 +33,18 @@ else:
 #játék újrajátszható
 akare=True
 while akare:
-    tipp=input("Tippelj egy egész számot: ").strip()
+    tipp=input("Tippelj egy egész számot(Kilépés az X betűvel): ").strip()
     if (tipp.isdecimal()):
         tipp=int(tipp)
     else:
+        if tipp=='x' or tipp=='X':
+            exit()
         print("Egész számmal játssz")
         continue
 
     while tipp!=kitalalando_szam:
         print("Nem talált!")
-        tipp=input("Tippelj egy egész számot: ").strip()
+        tipp=input("Tippelj egy egész számot(Kilépés az X betűvel): ").strip()
         if (tipp.isdecimal()):
             tipp=int(tipp)
             if tipp>kitalalando_szam:
@@ -50,6 +52,8 @@ while akare:
             else:
                 print("Nagyobbat tippelj!")
         else:
+            if tipp=='x' or tipp=='X':
+                exit()
             print("Egész számmal játssz")
             continue
     
