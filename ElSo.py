@@ -1,11 +1,12 @@
 import random
 hlista=[]
-for i in range(100):
+while len(hlista)<40:
     szam=random.randint(10,99)
-    hlista.append(szam)
+    if szam not in hlista:
+     hlista.append(szam)
 #Ellenőrzés
 print(hlista)
-
+print(len(hlista))
 #Egyszám játék
 jatek_szam=0
 nem_talaltDB=0
@@ -44,6 +45,10 @@ while akare:
         tipp=input("Tippelj egy egész számot: ").strip()
         if (tipp.isdecimal()):
             tipp=int(tipp)
+            if tipp>kitalalando_szam:
+                print("Kisebbet tippelj!")
+            else:
+                print("Nagyobbat tippelj!")
         else:
             print("Egész számmal játssz")
             continue
