@@ -39,7 +39,7 @@ while akare:
     else:
         if tipp=='x' or tipp=='X':
             exit()
-        print("Egész számmal játssz")
+        print("Egész számmal játssz!")
         continue
 
     while tipp!=kitalalando_szam:
@@ -49,7 +49,7 @@ while akare:
             tipp=int(tipp)
             if tipp>kitalalando_szam:
                 print("Kisebbet tippelj!")
-            else:
+            elif tipp<kitalalando_szam:
                 print("Nagyobbat tippelj!")
         else:
             if tipp=='x' or tipp=='X':
@@ -58,8 +58,9 @@ while akare:
             continue
     
     print("Eltaláltad!")
+    jatek_szam+=1
 
     akarsze=input("Akarsz még játszani (I/N): ")
 
-    if akarsze=='N':
+    if akarsze=='N' or akarsze=='n':
         akare=False
