@@ -68,3 +68,31 @@ while (verseny_adatok[i].split(','))[0] != pilota:
     i+=1
 
 print((verseny_adatok[i]).strip())
+
+# 3. Hány versenyző teljesített 300 pont felett?
+db300f=0
+for i in range(1,len(verseny_adatok)):
+    if int(((verseny_adatok[i]).split(','))[1]) > 300 :
+        db300f+=1
+print(f"A 300 pont felett teljesítő pilóták száma: {db300f}")
+
+# 4.x Van-e 0 pomtos versenyző?
+i=1
+hossz=len(verseny_adatok)-1
+while i<=hossz and int(verseny_adatok[i].split(',')[1]) != 0 :
+    i+=1
+if i<=hossz:
+    print("Van 0 pontos versenyző!✔")
+else:
+    print("Nincs 0 pontos versenyző!😊")
+    
+# 4.y Mindenki szerzett-e már pontot?
+i=1
+
+while i<=hossz and int(verseny_adatok[i].split(',')[1]) > 0 :
+    i+=1
+if i>hossz:
+    print("Mindenki szerzett pontot!✔")
+else:
+    print("Nem mindenki szerzett pontot!😢")
+    
