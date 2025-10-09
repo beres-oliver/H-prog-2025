@@ -95,4 +95,15 @@ if i>hossz:
     print("Mindenki szerzett pontot!✔")
 else:
     print("Nem mindenki szerzett pontot!😢")
-    
+
+# 5. Ki vezeti a szezont?
+maxi=1
+max=int((verseny_adatok[maxi].split(','))[1])
+
+for i in range(2,len(verseny_adatok)):
+    if max<int((verseny_adatok[i].split(','))[1]):
+        max=int((verseny_adatok[i].split(','))[1])
+        maxi=i
+        
+print(f"{(verseny_adatok[maxi].split(','))[0]} vezeti a mezőnyt!")
+
