@@ -98,6 +98,7 @@ else:
 
 # 5. Ki vezeti a szezont?
 maxi=1
+
 max=int((verseny_adatok[maxi].split(','))[1])
 
 for i in range(2,len(verseny_adatok)):
@@ -107,3 +108,13 @@ for i in range(2,len(verseny_adatok)):
         
 print(f"{(verseny_adatok[maxi].split(','))[0]} vezeti a mezőnyt!")
 
+#6.
+
+#7. Kik a Mercedes pilótái?
+db=0
+mercisek=[]
+for i in range(1,len(verseny_adatok)):
+    if verseny_adatok[i].split(',')[2].strip() == "Mercedes":
+        mercisek.append(verseny_adatok[i].split(',')[2].strip())
+        db+=1
+print("A Mercédesz pilótái",mercisek)
