@@ -115,6 +115,21 @@ db=0
 mercisek=[]
 for i in range(1,len(verseny_adatok)):
     if verseny_adatok[i].split(',')[2].strip() == "Mercedes":
-        mercisek.append(verseny_adatok[i].split(',')[2].strip())
+        mercisek.append(verseny_adatok[i].split(',')[0].strip())
         db+=1
 print("A Mercédesz pilótái",mercisek)
+
+#8. A 300 pont felettiek és alattiak.
+dby=0
+dbz=0
+felettiek=[]
+alattiak=[]
+for i in range(1,len(verseny_adatok)):
+    if int(verseny_adatok[i].split(',')[1].strip()) > 300:
+        dby+=1
+        felettiek.append(verseny_adatok[i].split(',')[0].strip())
+    else:
+        dbz+=1
+        alattiak.append(verseny_adatok[i].split(',')[0].strip())
+print("\n\n300 pont felettiek:",felettiek)
+print("\n300 pont alattiak:",alattiak)     
