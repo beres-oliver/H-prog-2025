@@ -132,4 +132,34 @@ for i in range(1,len(verseny_adatok)):
         dbz+=1
         alattiak.append(verseny_adatok[i].split(',')[0].strip())
 print("\n\n300 pont felettiek:",felettiek)
-print("\n300 pont alattiak:",alattiak)     
+print("\n300 pont alattiak:",alattiak)
+
+#9. A 20. és a 21. század versenyzői adatai
+vers20=[]
+vers21=[]
+
+try:
+    with open("F1_1950-1999.csv", encoding="utf-8") as fajl:
+        
+        for sor in fajl:
+            vers20.append(sor)
+except IOError as ex:
+    print(f"Fájl megnyitás hiba: {ex}")
+    
+try:
+    with open("F1_2000-2024.csv", encoding="utf-8") as fajl:
+        
+        for sor in fajl:
+            vers21.append(sor)
+except IOError as ex:
+    print(f"Fájl megnyitás hiba: {ex}")
+
+unio20U21=[]
+
+for i in range(len(vers20)):
+    unio20U21.append(vers20[i])
+for i in range(len(vers21)):
+    unio20U21.append(vers21[i])
+
+for i in unio20U21:
+    print(i)
