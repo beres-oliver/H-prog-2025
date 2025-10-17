@@ -163,3 +163,14 @@ for i in range(len(vers21)):
 
 for i in unio20U21:
     print(i)
+    
+#10. Kik voltak a dobogón a 20. és a 21. században is?
+metszet=[]
+db=0
+for i in range(1,len(vers20)):
+    j=0
+    while j < len(vers21) and vers20[i].split(',')[2] != vers21[j].split(',')[2]:
+        j+=1
+    if j<len(vers21) and vers20[i].split(',')[2] not in metszet:
+        metszet.append(vers20[i].split(',')[2])
+print(metszet)
