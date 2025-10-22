@@ -62,13 +62,13 @@ for i in range(1, len(verseny_adatok)):
 print(f"Pontszámok átlaga: {pontszam/db}")
 
 # 2. Mi a bekért versenyző adatai?
-pilota = input("Kérek egy pilótát:")
+""" pilota = input("Kérek egy pilótát:")
 i=1
 while (verseny_adatok[i].split(','))[0] != pilota:
     i+=1
 
 print((verseny_adatok[i]).strip())
-
+ """
 # 3. Hány versenyző teljesített 300 pont felett?
 db300f=0
 for i in range(1,len(verseny_adatok)):
@@ -165,7 +165,7 @@ for i in unio20U21:
     print(i)
     
 #10. Kik voltak a dobogón a 20. és a 21. században is?
-metszet=[]
+""" metszet=[]
 db=0
 for i in range(1,len(vers20)):
     j=0
@@ -174,3 +174,12 @@ for i in range(1,len(vers20)):
     if j<len(vers21) and vers20[i].split(',')[2] not in metszet:
         metszet.append(vers20[i].split(',')[2])
 print(metszet)
+ """
+#11. Növekvő pont sorrend
+for i in range(1,len(verseny_adatok)-1):
+    for j in range(i+1,len(verseny_adatok)):
+        if int(verseny_adatok[j].split(',')[1]) < int(verseny_adatok[i].split(',')[1]):
+            seged=verseny_adatok[j]
+            verseny_adatok[j]=verseny_adatok[i]
+            verseny_adatok[i]=seged
+print(verseny_adatok)
